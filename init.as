@@ -7,9 +7,9 @@
 	import flash.errors.*;
 	import flash.display.*;
 	import flash.net.*;
+	import fl.video.VideoEvent;
+import flash.external.*;
 
-
-	import hilfsklassen.*;
 
 	public class init extends MovieClip
 	{
@@ -26,7 +26,7 @@
 			
 			// Event Listener setzen im Konstruktor
 			/*stage.nativeWindow.addEventListener(NativeWindowBoundsEvent.RESIZE,windowResizeEventHandler);*/
-			/*myButton.addEventListener(MouseEvent.CLICK, handleClick);	*/
+			logo.addEventListener(MouseEvent.CLICK, startIntro);
 			/*stage.addEventListener(KeyboardEvent.KEY_DOWN,keyDownListener);*/
 		}
 		
@@ -46,14 +46,14 @@
 				nullPosY = 0;
 			}
 			
-			mybutton.x = -nullPosX;
-			mybutton.y = -nullPosY;
+			/*logo.x = -nullPosX;
+			logo.y = -nullPosY;*/
 		}
 		
-		/*public function handleClick(e:MouseEvent):void
+		public function startIntro(e:MouseEvent):void
 		{
-			stage.close();
-		}*/
+			start.startVideo.play();
+		}
 
 		/*public function windowResizeEventHandler(evt:NativeWindowBoundsEvent):void
 		{
