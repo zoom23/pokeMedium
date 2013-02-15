@@ -1,4 +1,0 @@
-pokeMedium
-==========
-
-Poke_Acquisationsmedium
