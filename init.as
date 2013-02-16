@@ -20,7 +20,9 @@ import fl.video.VideoEvent;
 		//Konstruktor init
 		public function init()
 		{
-			/*trailer_mc.visible = false;*/
+			trailer.visible = false;
+			logo.visibe = false;
+			skipe.visible = false;
 			// Bühne auf Interaktiven Fullscreen stellen
 			stage.displayState = StageDisplayState.FULL_SCREEN_INTERACTIVE;
 			stage.scaleMode = StageScaleMode.NO_SCALE;
@@ -35,13 +37,16 @@ import fl.video.VideoEvent;
 			container.swapChildren(logo, startVideo);
 		
 		    addChild(container);
+			logo.visible = true;
 			
 			
 			// Event Listener setzen im Konstruktor
 			/*stage.nativeWindow.addEventListener(NativeWindowBoundsEvent.RESIZE,windowResizeEventHandler);*/
 			logo.addEventListener(MouseEvent.CLICK, startIntro);
+			skipe.addEventListener(MouseEvent.CLICK, gotoMenu);
 			
 			startVideo.addEventListener(Event.COMPLETE, showMessage);
+			trailer.addEventListener(Event.COMPLETE, gotoMenu);
 			
 			
 
@@ -84,13 +89,26 @@ import fl.video.VideoEvent;
 		function showMessage(e:Event):void {
 			/*MovieClip(root).gotoAndStop("trailer");*/
 			/*startVideo_mc.startVideo.visible = false;*/
-			trace("finish");
 			startVideo.visible = false;
-			/*trailer_mc.visible = true;
-			trailer_mc.play();*/
 			
- }
-
+			var container:Sprite = new Sprite();
+			container.addChild(skipe);
+			container.addChild(trailer);
+			
+			container.swapChildren(skipe, trailer);
+		
+		    addChild(container);
+			trailer.visible = true;
+			skipe.visible = true;
+			trailer.play();
+		}
+		public function gotoMenu(e:Event):void
+		{
+			trailer.stop();
+			trailer.visible = false;
+			gotoAndStop(2);
+			
+		}
 		/*public function windowResizeEventHandler(evt:NativeWindowBoundsEvent):void
 		{
 			stage.displayState = StageDisplayState.FULL_SCREEN;
