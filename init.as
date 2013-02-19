@@ -45,7 +45,7 @@ import fl.video.VideoEvent;
 			logo.addEventListener(MouseEvent.CLICK, startIntro);
 			skipe.addEventListener(MouseEvent.CLICK, gotoMenu);
 			
-			startVideo.addEventListener(Event.COMPLETE, showMessage);
+			startVideo.addEventListener(Event.COMPLETE, endeStart);
 			trailer.addEventListener(Event.COMPLETE, gotoMenu);
 			
 			
@@ -86,7 +86,7 @@ import fl.video.VideoEvent;
 			
 		}
 		
-		function showMessage(e:Event):void {
+		function endeStart(e:Event):void {
 			/*MovieClip(root).gotoAndStop("trailer");*/
 			/*startVideo_mc.startVideo.visible = false;*/
 			startVideo.visible = false;
