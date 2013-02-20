@@ -23,6 +23,7 @@ import fl.video.VideoEvent;
 			trailer.visible = false;
 			logo.visibe = false;
 			skipe.visible = false;
+			
 			// Bühne auf Interaktiven Fullscreen stellen
 			stage.displayState = StageDisplayState.FULL_SCREEN_INTERACTIVE;
 			stage.scaleMode = StageScaleMode.NO_SCALE;
@@ -109,6 +110,7 @@ import fl.video.VideoEvent;
 			gotoAndStop(2);
 			
 		}
+		
 		/*public function windowResizeEventHandler(evt:NativeWindowBoundsEvent):void
 		{
 			stage.displayState = StageDisplayState.FULL_SCREEN;
